@@ -27,11 +27,8 @@ class PowerReporter():
         self.nameArray[int_port] = ""
 
     def printAll(self):
-        for i in range (0, 9):
+        for i in range (0, 10):
             self.DB.putString("(Port 0" + str(i) + ") " + str(self.nameArray[i]), str(self.PDP.getCurrent(i)) + " Amps")
-        for i in range (10, 15):
+        for i in range (10, 16):
             self.DB.putString("(Port " + str(i) + ") " + str(self.nameArray[i]), str(self.PDP.getCurrent(i)) + " Amps")
-        #THESE NEXT TO HAD TO BE REPEATED FOR SOME REASON. IT'S NOT THE FOR LOOP SYNTAX
-        self.DB.putString("(Port " + str(15) + ") " + str(self.nameArray[15]), str(self.PDP.getCurrent(15)) + " Amps")
-        self.DB.putString("(Port " + "0" + str(9) + ") " + str(self.nameArray[9]), str(self.PDP.getCurrent(9)) + " Amps")
 
