@@ -1,15 +1,21 @@
 __author__ = 'Dawson'
 import wpilib
+
 class PowerReporter():
-
-    def __init__(self):
-        self.PDP = "use setUp"
-        self.DB = "use setUp"
+    def __init__(self,PDP = None, DB = None):
+        self.PDP = PDP if PDP != None else "Use setUp()"
+        self.DB = DB if PDP != None else "Use setUp()"
         self.nameArray = [""] * 16
-
-    def setUp(self, inPDP, inDB):
-        self.PDP = inPDP
-        self.DB = inDB
+        
+    def setPDP(self, PDP):
+        self.PDP = PDP
+        
+    def setDashboard(self, DB):
+        self.DB = DB
+        
+    def setUp(self, PDP, DB):
+        self.PDP = PDP
+        self.DB = DB
 
     def setDefaultPortNames(self):
         #Edit this code as needed
